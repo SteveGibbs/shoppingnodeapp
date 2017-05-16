@@ -3,11 +3,24 @@ var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport');
 
+var Order = require('../models/order');
+var Cart = require('../models/cart');
+
 var csrfProtection = csrf();
 router.use(csrfProtection); //protects the routes using csrfProtection
 
 router.get('/profile', isLoggedIn, function(req, res, next){
-    res.render('user/profile');
+    Order.find({user: req.user}, function(err, orders){ //find order for users that are the same as the logged in user
+        if(err){
+            return res.write('Error!');
+        }
+        var cart;
+        orders.forEach(function(order){
+           cart = new Cart(order.cart);
+           order.items = cart.generateArray();  //use cart model to generate an array of the different line items and store it in the items field of the order object
+        });
+        res.render('user/profile', {orders: orders});
+    });
 });  //order is important
 
 router.get('/logout', isLoggedIn, function(req, res, next){
