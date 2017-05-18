@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var Cart = require('../models/cart');
-
+//var mongoose = require('mongoose');
 var Product = require('../models/product');
 var Order = require('../models/order');
+var objectId = require('mongodb').ObjectID;  // mongo ID is an object ID not a string ID.
+var assert = require('assert');
+var url = 'localhost:27017/shopping';
+
 
 
 /* GET home page. */
@@ -17,6 +21,28 @@ router.get('/', function(req, res, next) {
         }
         res.render('shop/index', {title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg });
     });
+});
+
+router.get('/get-data/:id', function(req, res, next){
+    var uniqueid = req.params.id;
+    var result = {};
+        //assert.equal(null, err);
+        var getObject = function() {
+            Product.findOne({'_id': objectId(uniqueid)}, function (err, doc) {
+                //assert.equal(null, err);
+                console.log('item found');
+                console.log(uniqueid);
+                console.log(doc);
+                console.log(doc.title);
+                result = doc;
+                //db.close();
+                res.render('shop/show', {item: result});
+            });
+        };
+        getObject();
+        console.log("getObject function has been called");
+
+
 });
 
 router.get('/add-to-cart/:id', function(req, res, next){
