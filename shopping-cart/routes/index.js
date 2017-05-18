@@ -41,9 +41,51 @@ router.get('/get-data/:id', function(req, res, next){
         };
         getObject();
         console.log("getObject function has been called");
+});
 
+router.post('/update', function(req, res, next){
+
+    var item = {
+        title: req.body.title,
+        description: req.body.description,
+        imagePath: req.body.imagePath,
+        price: req.body.price
+    };
+
+    var id = req.body.id;
+
+    var editObject = function() {
+        //assert.equal(null, err);
+        //pass the id into the objectId function to transform it into an objectId that Mongo recognises as the
+        // first parameter then use $set to say what the new data should be
+        //$set just updates only the selected fields;
+        Product.updateOne({'_id': objectId(id)}, {$set: item}, function (err, result) {
+            assert.equal(null, err);
+            console.log('item updated');
+            //db.close();
+
+        });
+    }
+editObject();
 
 });
+
+router.post('/delete', function(req, res, next){
+    var id = req.body.id;
+
+    var deleteObject = function() {
+        //assert.equal(null, err);
+        Product.deleteOne({'_id': objectId(id)}, function (err, result) {
+            assert.equal(null, err);
+            console.log('item deleted');
+            res.redirect('/');
+            //db.close();
+
+        });
+    }
+    deleteObject();
+});
+
 
 router.get('/add-to-cart/:id', function(req, res, next){
    var productId = req.params.id;
