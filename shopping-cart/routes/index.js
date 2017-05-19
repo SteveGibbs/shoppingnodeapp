@@ -35,12 +35,31 @@ router.get('/get-data/:id', function(req, res, next){
                 console.log(doc);
                 console.log(doc.title);
                 result = doc;
-                //db.close();
                 res.render('shop/show', {item: result});
             });
         };
         getObject();
         console.log("getObject function has been called");
+});
+
+router.post('/insert', function(req, res, next) {
+    var item = {
+        title: req.body.title,
+        description: req.body.description,
+        imagePath: req.body.imagePath,
+        price: req.body.price
+    };
+    var products = new Product(item);
+    var insertObject = function() {
+        //assert.equal(null, err);
+        products.save(item, function (err, result) {
+            assert.equal(null, err);
+            console.log('item inserted');
+            res.redirect('/');
+        });
+
+    };
+    insertObject();
 });
 
 router.post('/update', function(req, res, next){
@@ -62,13 +81,14 @@ router.post('/update', function(req, res, next){
         Product.updateOne({'_id': objectId(id)}, {$set: item}, function (err, result) {
             assert.equal(null, err);
             console.log('item updated');
-            //db.close();
+            res.redirect('/');
 
         });
     }
 editObject();
 
 });
+
 
 router.post('/delete', function(req, res, next){
     var id = req.body.id;
@@ -79,7 +99,6 @@ router.post('/delete', function(req, res, next){
             assert.equal(null, err);
             console.log('item deleted');
             res.redirect('/');
-            //db.close();
 
         });
     }
