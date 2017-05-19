@@ -10,7 +10,11 @@ A shopping cart website built with Node.js, Express and MongoDB (via Mongoose) t
 ## Features
 
 #### Customers
-1. Shopping cart to purchase tickets and view orders for logged in customers.
+1. Shopping cart to purchase product.  Customers must be logged in, via encrypted password, to complete checkout and pay via Stripe. 
+2. Following checkout and payment, customers view their historical orders on the user profile page.  
+- please use credit card, 4242 4242 4242 4242 with expiry 12 / 18 to make payments.  The expiry date must be in the future to validate via Stripe.  
+3. Flash messages and field validations for incorrect data.  
+
 
 #### Mobile responsive
 
@@ -45,8 +49,9 @@ A shopping cart website built with Node.js, Express and MongoDB (via Mongoose) t
 - JavaScript, HTML5 and CSS3 as programming languages
 
 ## New features under consideration
-- Shopping cart has basic functionality and may be built out in future from accepting and listing orders, after checkout, to include "mock" payments.  
+- Will extend models in Mongoose to have sub-products.  
 
+## History of Building App (for my own reference)
 
 From terminal command line:
 
@@ -76,4 +81,4 @@ Run mongo db separately:
 database server;  by default it should use port:27017
 - from separate bash terminal navigate to "/mongodb/bin" then run "./mongo" to run mongo client.  From command line "use shopping" to switch database to shopping database.
 
-
+Run 'npm start' from directory where app is saved to run locally. This runs the script 'node ./bin/www'. 
