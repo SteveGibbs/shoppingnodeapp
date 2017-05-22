@@ -17,8 +17,14 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" class="form-control">
                 <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                <br>
             <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
-        {{csrfToken}}
+        <br>
+        <br>
+        <div>
+            This is the csrfToken - {{csrfToken}}
+        </div>
+
     </div>
 </div>

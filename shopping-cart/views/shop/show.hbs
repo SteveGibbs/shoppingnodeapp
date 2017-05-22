@@ -15,7 +15,7 @@
 </div>
 
 <h3>Edit Data</h3>
-
+<br>
 <form action="/update" method="post">
     <div class="form-inline">
         <div class="form-group">
@@ -39,20 +39,18 @@
 
     <div class="form-group">
         <label for="description">Description</label>
-        <input type="text" class="form-control" rows="4" id="description" name="description" value="{{item.description}}">
+        <textarea class="form-control" rows="5" id="description" name="description">{{item.description}}</textarea>
+        <!--<input type="text" class="form-control" rows="4" id="description" name="description" value="{{!-{{item.description}}--}}"> -->
     </div>
 
 
     <button type="submit" class="btn btn-default">Update</button>
 
 </form>
-
-<br>
-<br>
 <br>
 
 <h3>Delete Data</h3>
-
+<br>
 <form action="/delete" method="post">
     <div class="form-inline">
         <div class="form-group">
@@ -66,29 +64,28 @@
 </form>
 
 <br>
-<br>
 <h3>Add New</h3>
-
+<br>
 <form action="/insert" method="post">
     <div class="form-inline">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{item.title}}">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Country">
         </div>
         <div class="form-group">
             <label for="imagePath">Image</label>
-            <input type="text" class="form-control" id="imagePath" name="imagePath" value="{{item.imagePath}}">
+            <input type="text" class="form-control" id="imagePath" name="imagePath" placeholder="../images/country.jpg">
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="text" class= "form-control" id="price" name="price" value="{{item.price}}">
+            <input type="text" class= "form-control" id="price" name="price" placeholder="price">
         </div>
     </div>
     <br>
 
     <div class="form-group">
         <label for="description">Description</label>
-        <input type="text" class="form-control" rows="4" id="description" name="description" value="{{item.description}}">
+        <textarea class="form-control" rows="5" id="description" name="description" placeholder="type description here"></textarea>
     </div>
 
 
@@ -98,4 +95,3 @@
 
 <br>
 <br>
-

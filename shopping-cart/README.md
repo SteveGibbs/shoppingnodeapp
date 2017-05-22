@@ -23,7 +23,7 @@ A shopping cart website built with Node.js, Express and MongoDB (via Mongoose) t
 ## Technology stack
 
 [Node.js](https://nodejs.org/) v6.10.0 - event driven, Javascript runtime
-[MongoDB](https://www.mongodb.com) - no SQL, database
+[MongoDB](https://www.mongodb.com) v3.4.2 - no SQL, database
 
 - "dependencies": {
   -  "bcrypt-nodejs": "0.0.3",  - for password login encryption
