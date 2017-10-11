@@ -14,84 +14,92 @@
     <p>Price: $ {{item.price}}</p>
 </div>
 
-<h3>Edit Data</h3>
-<br>
-<form action="/update" method="post">
-    <div class="form-inline">
-        <div class="form-group">
-            <label for="id">ID</label>
-            <input type="text" class = "form-control" id="id" name="id" value="{{item.id}}">
-        </div>
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{item.title}}">
-        </div>
-        <div class="form-group">
-            <label for="imagePath">Image</label>
-            <input type="text" class="form-control" id="imagePath" name="imagePath" value="{{item.imagePath}}">
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input type="text" class= "form-control" id="price" name="price" value="{{item.price}}">
-        </div>
+<div class="accordion"> Admin Functions +
+    <div class="accordion-sibling">
+        <h3>Edit Data</h3>
+        <br>
+        <form action="/update" method="post">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" class = "form-control" id="id" name="id" value="{{item.id}}">
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{item.title}}">
+                </div>
+                <div class="form-group">
+                    <label for="imagePath">Image</label>
+                    <input type="text" class="form-control" id="imagePath" name="imagePath" value="{{item.imagePath}}">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" class= "form-control" id="price" name="price" value="{{item.price}}">
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" rows="5" id="description" name="description">{{item.description}}</textarea>
+                <!--<input type="text" class="form-control" rows="4" id="description" name="description" value="{{!-{{item.description}}--}}"> -->
+            </div>
+
+
+            <button type="submit" class="btn btn-default">Update</button>
+
+        </form>
+        <br>
+
+        <h3>Delete Data</h3>
+        <br>
+        <form action="/delete" method="post">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" class = "form-control" id="id" name="id" value="{{item.id}}">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-default">Delete</button>
+
+        </form>
+
+        <br>
+        <h3>Add New</h3>
+        <br>
+        <form action="/insert" method="post">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Country">
+                </div>
+                <div class="form-group">
+                    <label for="imagePath">Image</label>
+                    <input type="text" class="form-control" id="imagePath" name="imagePath" placeholder="../images/country.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" class= "form-control" id="price" name="price" placeholder="price">
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" rows="5" id="description" name="description" placeholder="type description here"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-default">Insert</button>
+
+        </form>
+
+        <br>
+        <br>
     </div>
-    <br>
-
-    <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" rows="5" id="description" name="description">{{item.description}}</textarea>
-        <!--<input type="text" class="form-control" rows="4" id="description" name="description" value="{{!-{{item.description}}--}}"> -->
-    </div>
 
 
-    <button type="submit" class="btn btn-default">Update</button>
+</div>
 
-</form>
-<br>
-
-<h3>Delete Data</h3>
-<br>
-<form action="/delete" method="post">
-    <div class="form-inline">
-        <div class="form-group">
-            <label for="id">ID</label>
-            <input type="text" class = "form-control" id="id" name="id" value="{{item.id}}">
-        </div>
-    </div>
-    <br>
-    <button type="submit" class="btn btn-default">Delete</button>
-
-</form>
-
-<br>
-<h3>Add New</h3>
-<br>
-<form action="/insert" method="post">
-    <div class="form-inline">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Country">
-        </div>
-        <div class="form-group">
-            <label for="imagePath">Image</label>
-            <input type="text" class="form-control" id="imagePath" name="imagePath" placeholder="../images/country.jpg">
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input type="text" class= "form-control" id="price" name="price" placeholder="price">
-        </div>
-    </div>
-    <br>
-
-    <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" rows="5" id="description" name="description" placeholder="type description here"></textarea>
-    </div>
-
-
-    <button type="submit" class="btn btn-default">Insert</button>
-
-</form>
-
-<br>
-<br>
+<script type="text/javascript" src="../javascripts/accordion.js"></script>
