@@ -6,7 +6,7 @@ var Product = require('../models/product');
 var Order = require('../models/order');
 var objectId = require('mongodb').ObjectID;  // mongo ID is an object ID not a string ID.
 var assert = require('assert');
-var url = process.env.MONGODB_URI;
+var url = MONGODB_URI;
 //var url = 'localhost:27017/shopping';
 
 
