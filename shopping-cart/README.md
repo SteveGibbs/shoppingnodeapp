@@ -1,8 +1,12 @@
 # Node Shopping-Cart Website
-[Click here to see live Project] Not yet deployed - available on //localhost:3000
+[Click here to see live Project] (https://stormy-tundra-66769.herokuapp.com/)
 
 ## Description
-A shopping cart website built with Node.js, Express and MongoDB (via Mongoose) to practice this framework.  The website is non-commercial and purely for educational purposes only.  
+A travel website with shopping cart built with Node.js, Express and MongoDB (via Mongoose) to practice this framework. 
+
+The website has been deployed on Heroku with Node and mLab MongoDB.  
+
+The website is non-commercial and purely for educational purposes only.  
 
 ## Designed by
 [Steve Gibbs](https://github.com/SteveGibbs)
@@ -82,3 +86,16 @@ database server;  by default it should use port:27017
 - from separate bash terminal navigate to "/mongodb/bin" then run "./mongo" to run mongo client.  From command line "use shopping" to switch database to shopping database.
 
 Run 'npm start' from directory where app is saved to run locally. This runs the script 'node ./bin/www'. 
+
+For Heroku deployment on command line:
+
+- heroku login  => login to heroku with username and password
+- heroku create =>  create app from same level as git init (should have moved git init one level down)
+- heroku addons:create mongolab:sandbox
+- git add . => all files to git
+- git commit -m "message here" => add comment to push to git
+- git push heroku master => push code up to heroku
+- heroku run node ./seed/product-seeder.js => seed database by running seeder file via node instance ("require" is a node command)
+- heroku config => use this to find details of the heroku environment (path, user and password) from app level
+
+

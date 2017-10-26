@@ -25,3 +25,42 @@
 .list-footer {
     list-style-type: none;
 }
+
+img.img-responsive {
+    width: 350px;
+    height: 233px;
+    border-radius: 5px;
+}
+
+.img-large {
+    max-width: 960px;
+    max-height: 640px;
+}
+
+.container-w85 {
+    width: 85%;
+    margin-left: 7%;
+}
+
+@media only screen and (max-width: 1224px) {
+
+.img-large {
+    max-width: 640px;
+    max-height: 427px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+.img-large {
+    max-width: 427px;
+    max-height: 320px;
+}
+}
+
+.white {
+    color: white !important;
+}
+
+.container-fluid {
+    background-color: lightslategray;
+}

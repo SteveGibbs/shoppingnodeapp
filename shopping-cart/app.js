@@ -18,7 +18,7 @@ var userRoutes = require('./routes/user');
 var app = express();
 
 //mongoose.connect('localhost:27017/shopping');
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || 'localhost:27017/shopping');
 
 require('./config/passport');
 
@@ -60,7 +60,7 @@ app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  var err = new Error('404 Error - Sorry the page was not found');
   err.status = 404;
   next(err);
 });

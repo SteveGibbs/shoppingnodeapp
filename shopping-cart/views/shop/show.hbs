@@ -1,20 +1,32 @@
-<div class="row">
-    <h1>{{item.title}}</h1>
-    <br>
-    <br>
-    <img src="{{item.imagePath}}" alt="" class="img-responsive">
-    <br>
-    <br>
-    <strong>Description:</strong>
-    <br>
-    <br>
-    <p>{{item.description}}</p>
 
-    <br>
-    <p>Price: $ {{item.price}}</p>
-</div>
 
-<div class="accordion"> Admin Functions +
+    <div class="row container-w85">
+        <h1>{{item.title}}</h1>
+        <br>
+        <br>
+        <img src="{{item.imagePath}}" alt="" class="img-large">
+        <br>
+        <br>
+        <strong>Description:</strong>
+        <br>
+        <br>
+        <p>{{item.description}}</p>
+
+        <br>
+        <p>Price: $ {{item.price}}</p>
+        <br>
+        <p>Highlights: {{item.highlights}}</p>
+
+
+        <br>
+        <hr>
+        <br>
+    </div>
+
+
+
+
+<div class="accordion container-w85"> Admin Functions +
     <div class="accordion-sibling">
         <h3>Edit Data</h3>
         <br>
