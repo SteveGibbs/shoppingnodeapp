@@ -48,12 +48,45 @@ img.img-responsive {
     border-color: white;
 }
 
+div.panel {
+    display: none;
+}
+
 @media only screen and (max-width: 1224px) {
 
 .img-large {
     max-width: 640px;
     max-height: 427px;
     }
+}
+
+button.accordion {
+    color: darkslategray;
+    padding: 18px;
+    margin-bottom: 50px;
+    width: 30%;
+    text-align: left;
+    border: none;
+    outline: none;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background-color: white;
+}
+
+button.accordion.container-w85.active, button.accordion.container-w85:hover {
+    background-color: lightcyan;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
 }
 
 @media only screen and (max-width: 768px) {
