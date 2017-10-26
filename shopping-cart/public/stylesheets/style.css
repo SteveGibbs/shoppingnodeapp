@@ -42,6 +42,12 @@ img.img-responsive {
     margin-left: 7%;
 }
 
+.alert-success{
+    color: white;
+    background-color: white;
+    border-color: white;
+}
+
 @media only screen and (max-width: 1224px) {
 
 .img-large {
