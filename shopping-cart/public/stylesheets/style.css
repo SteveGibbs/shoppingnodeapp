@@ -20,6 +20,8 @@
 
 .container-footer {
     padding: 2% 5%;
+    background-color: darkslategray;
+
 }
 
 .list-footer {
@@ -101,5 +103,5 @@ button.accordion.active:after {
 }
 
 .container-fluid {
-    background-color: lightslategray;
+    background-color: darkslategray;
 }
