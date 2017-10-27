@@ -11,6 +11,16 @@
     font-size: 16px;
 }
 
+.img-small {
+    max-width: 180px;
+    padding: 20px;
+}
+
+.checkout {
+    margin-left: 20px !important;
+    font-size: 18px;
+    color: black;
+}
 
 .container {
     display: flex;
